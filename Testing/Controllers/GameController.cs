@@ -41,5 +41,17 @@ namespace Testing.Controllers
 
             return RedirectToAction("ViewGame", new { id = game.gameID });
         }
+
+        public IActionResult InsertGame()
+        {
+            var game = new Game();
+            return View(game);
+        }
+
+        public IActionResult InsertGameToDatabase(Game gameToInsert)
+        {
+            repo.InsertGame(gameToInsert);
+            return RedirectToAction("Index");
+        }
     }
 }

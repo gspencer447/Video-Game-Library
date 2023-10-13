@@ -9,5 +9,6 @@ namespace Testing
         public IEnumerable<Game> GetAllGames();
         public Game GetGame(int id);
         public void UpdateGame(Game game);
+        public void InsertGame(Game gameToInsert);
     }
 }

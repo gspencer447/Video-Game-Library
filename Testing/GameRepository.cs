@@ -25,6 +25,12 @@ namespace Testing
                 new { id = id });
         }
 
+        public void InsertGame(Game gameToInsert)
+        {
+            _conn.Execute("INSERT INTO games (name, genre, gameID) VALUES (@name, @genre, @gameID);",
+                new { name = gameToInsert.name, genre = gameToInsert.genre, gameID = gameToInsert.gameID });
+        }
+
         public void UpdateGame(Game game)
         {
             _conn.Execute("UPDATE games SET Name = @name, Genre = @genre WHERE gameID = @id",
