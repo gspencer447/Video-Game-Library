@@ -1,0 +1,22 @@
+﻿@model Game
+
+<h3>@Model.name Details</h3>
+
+<table class="table">
+    <tr>
+        <th>Game ID</th>
+        <th>Name</th>
+        <th>Genre</th>
+        <th>Release Date</th>
+    </tr>
+    <tr>
+        <td>@Model.gameID</td>
+        <td>@Model.name</td>
+        <td>@Model.genre</td>
+        <td>@Model.release_date</td>
+    </tr>
+</table>
+
+<div style="display: block">
+    <a href="/Game/UpdateGame/@Model.gameID">Update this Game</a>
+</div>
