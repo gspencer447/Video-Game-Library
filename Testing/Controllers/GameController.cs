@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Testing.Models;
 
 namespace Testing.Controllers
@@ -12,9 +15,25 @@ namespace Testing.Controllers
             this.repo = repo;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string sort)
         {
-            var games = repo.GetAllGames();
+            IEnumerable<Game> games;
+
+            switch (sort)
+            {
+                case "beaten":
+                    games = repo.GetAllGames().Where(game => game.status == "Beaten");
+                    break;
+                case "played":
+                    games = repo.GetAllGames().Where(game => game.status == "Played Not Beaten");
+                    break;
+                case "toPlay":
+                    games = repo.GetAllGames().Where(game => game.status == "To Play");
+                    break;
+                default:
+                    games = repo.GetAllGames();
+                    break;
+            }
             return View(games);
         }
 
@@ -37,8 +56,12 @@ namespace Testing.Controllers
 
         public IActionResult UpdateGameToDatabase(Game game)
         {
-            repo.UpdateGame(game);
+            if (string.IsNullOrWhiteSpace(game.status))
+            {
+                game.status = "Not Played";
+            }
 
+            repo.UpdateGame(game);
             return RedirectToAction("ViewGame", new { id = game.gameID });
         }
 
@@ -50,7 +73,18 @@ namespace Testing.Controllers
 
         public IActionResult InsertGameToDatabase(Game gameToInsert)
         {
+            if (string.IsNullOrWhiteSpace(gameToInsert.status))
+            {
+                gameToInsert.status = "Not Played";
+            }
+
             repo.InsertGame(gameToInsert);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DeleteGame(Game game) 
+        {
+            repo.DeleteGame(game);
             return RedirectToAction("Index");
         }
     }

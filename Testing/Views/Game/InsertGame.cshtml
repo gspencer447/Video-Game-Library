@@ -13,7 +13,15 @@
     <input type="text" name="Genre" class="form-control" />
 
     <label asp-for="release_date" class="control-label">Release Date</label>
-    <input type="number" name="Release Date" class="form-control" value="" />
+    <input type="number" name="release_date" class="form-control" value="" />
+
+    <label asp-for="status" class="control-label">Status</label>
+    <select asp-for="status" class="form-control">
+        <option value="Not Played">Not Played</option>
+        <option value="To Play">To Play</option>
+        <option value="Played Not Beaten">Played, Not Beaten</option>
+        <option value="Beaten">Beaten</option>
+    </select>
 
     <input type="submit" value="Add Game" class="btn btn-primary" />
 }

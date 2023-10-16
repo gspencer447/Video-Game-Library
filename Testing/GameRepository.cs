@@ -27,14 +27,20 @@ namespace Testing
 
         public void InsertGame(Game gameToInsert)
         {
-            _conn.Execute("INSERT INTO games (name, genre, gameID) VALUES (@name, @genre, @gameID);",
-                new { name = gameToInsert.name, genre = gameToInsert.genre, gameID = gameToInsert.gameID });
+            _conn.Execute("INSERT INTO games (name, genre, release_date, status, gameID) VALUES (@name, @genre, @release_date, @status, @gameID);",
+                new { name = gameToInsert.name, genre = gameToInsert.genre, release_date = gameToInsert.release_date, status = gameToInsert.status, gameID = gameToInsert.gameID,  });
         }
 
         public void UpdateGame(Game game)
         {
-            _conn.Execute("UPDATE games SET Name = @name, Genre = @genre WHERE gameID = @id",
-             new { name = game.name, genre = game.genre, id = game.gameID });
+            _conn.Execute("UPDATE games SET Name = @name, Genre = @genre, Release_Date = @release_date, Status = @status WHERE gameID = @id",
+             new { name = game.name, genre = game.genre, release_date = game.release_date, status = game.status, id = game.gameID  });
+        }
+
+        public void DeleteGame(Game game) 
+        {
+            _conn.Execute("DELETE FROM games WHERE gameID = @id;",
+                new { id = game.gameID });
         }
     }
 }

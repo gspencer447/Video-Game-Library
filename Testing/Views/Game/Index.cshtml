@@ -6,12 +6,23 @@
     <a href="/Game/InsertGame/">Add a New Game</a>
 </div>
 
+<div class="sort-options">
+    <label for="sort">Sort by: </label>
+    <select id="sort" onchange="sortGames(this.value)">
+        <option value="default">Default</option>
+        <option value="beaten">Beaten</option>
+        <option value="played">Played, Not Beaten</option>
+        <option value="toPlay">To Play</option>
+    </select>
+</div>
+
 <table class="table">
     <tr>
         <th>ID</th>
         <th>Name</th>
         <th>Genre</th>
         <th>Release Date</th>
+        <th>Status</th>
     </tr>
 
     @foreach (var game in @Model)
@@ -21,7 +32,48 @@
             <td>@game.name</td>
             <td>@game.genre</td>
             <td>@game.release_date</td>
+            <td>@game.status</td>
         </tr>
     }
 
 </table>
+
+<script>
+    function sortGames(sortBy) {
+        let games = @Html.Raw(Json.Serialize(Model)); // Serialize the games from the model
+
+        switch (sortBy) {
+            case 'beaten':
+                games = games.filter(game => game.status === 'Beaten');
+                break;
+            case 'played':
+                games = games.filter(game => game.status === 'Played Not Beaten');
+                break;
+            case 'toPlay':
+                games = games.filter(game => game.status === 'To Play');
+                break;
+            default:
+                // Default sorting (e.g., by game ID or any other criteria)
+                // Adjust the sorting logic based on your requirements
+                games.sort((a, b) => a.gameID - b.gameID);
+        }
+
+        // Update the table with the sorted games
+        displaySortedGames(games);
+    }
+
+    function displaySortedGames(sortedGames) {
+        const tableBody = document.querySelector('table tbody');
+        tableBody.innerHTML = '';
+
+        sortedGames.forEach(game => {
+            const row = tableBody.insertRow();
+            row.innerHTML = `
+                    <td><a href="/Game/ViewGame/${game.gameID}">${game.gameID}</a></td>
+                    <td>${game.name}</td>
+                    <td>${game.genre}</td>
+                    <td>${game.release_date}</td>
+                    <td>${game.status}</td>`;
+        });
+    }
+</script>

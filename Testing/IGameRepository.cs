@@ -10,5 +10,6 @@ namespace Testing
         public Game GetGame(int id);
         public void UpdateGame(Game game);
         public void InsertGame(Game gameToInsert);
+        public void DeleteGame(Game game);
     }
 }
