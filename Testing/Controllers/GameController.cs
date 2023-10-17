@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -87,5 +88,15 @@ namespace Testing.Controllers
             repo.DeleteGame(game);
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        [Route("Game/UpdateGameStatus/{gameID}")]
+        public IActionResult UpdateGameStatus(int gameID, [FromBody] string status)
+        {
+            repo.UpdateGameStatus(gameID, status);
+
+            return Ok(new { message = "Game status updated successfully" });
+        }
+
     }
 }

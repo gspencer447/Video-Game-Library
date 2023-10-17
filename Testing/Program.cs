@@ -44,4 +44,9 @@ app.MapControllerRoute(
     pattern: "Library/{action=Index}/{id?}",
     defaults: new { controller = "Library" });
 
+app.MapControllerRoute(
+    name: "updateGameStatus",
+    pattern: "Game/UpdateGameStatus/{gameID}",
+    defaults: new { controller = "Game", action = "UpdateGameStatus" });
+
 app.Run();

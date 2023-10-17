@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using Testing.Models;
 
 namespace Testing
@@ -41,6 +42,12 @@ namespace Testing
         {
             _conn.Execute("DELETE FROM games WHERE gameID = @id;",
                 new { id = game.gameID });
+        }
+
+        public void UpdateGameStatus(int gameId, string status)
+        {
+            var query = "UPDATE games SET status = @status WHERE gameID = @gameID";
+            _conn.Execute(query, new { status = status, gameID = gameId });
         }
     }
 }

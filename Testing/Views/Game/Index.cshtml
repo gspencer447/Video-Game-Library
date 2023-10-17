@@ -12,7 +12,7 @@
         <option value="default">Default</option>
         <option value="beaten">Beaten</option>
         <option value="played">Played, Not Beaten</option>
-        <option value="toPlay">To Play</option>
+        <option value="to play">To Play</option>
     </select>
 </div>
 
@@ -32,10 +32,16 @@
             <td>@game.name</td>
             <td>@game.genre</td>
             <td>@game.release_date</td>
-            <td>@game.status</td>
+            <td>
+                <select onchange="updateGameStatus(this, '@game.gameID')">
+                    <option value="Not Played">Not Played</option>
+                    <option value="Played Not Beaten">Played, Not Beaten</option>
+                    <option value="Beaten">Beaten</option>
+                    <option value="To Play">To Play</option>
+                </select>
+            </td>
         </tr>
     }
-
 </table>
 
 <script>
@@ -53,8 +59,6 @@
                 games = games.filter(game => game.status === 'To Play');
                 break;
             default:
-                // Default sorting (e.g., by game ID or any other criteria)
-                // Adjust the sorting logic based on your requirements
                 games.sort((a, b) => a.gameID - b.gameID);
         }
 
@@ -76,4 +80,26 @@
                     <td>${game.status}</td>`;
         });
     }
+
 </script>
+<script>
+    function updateGameStatus(selectElement, gameId) {
+        const status = selectElement.value;
+
+        // Send a POST request to update the game status
+        fetch(`/Game/UpdateGameStatus/${gameId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(status)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Status for game ID " + gameId + " updated to: " + status);
+            // Handle the response data if needed
+        })
+        .catch(error => console.error('Error updating game status:', error));
+    }
+</script>
+

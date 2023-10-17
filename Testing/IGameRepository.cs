@@ -11,5 +11,6 @@ namespace Testing
         public void UpdateGame(Game game);
         public void InsertGame(Game gameToInsert);
         public void DeleteGame(Game game);
+        public void UpdateGameStatus(int gameId, string status);
     }
 }

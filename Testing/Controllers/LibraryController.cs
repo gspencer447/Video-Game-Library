@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Testing.Models;
@@ -12,11 +13,6 @@ namespace Testing.Controllers
         public LibraryController(IGameRepository repo)
         {
             _repo = repo;
-        }
-        private IEnumerable<Game> FetchLibraryGames()
-        {
-            return _repo.GetAllGames().Where(game =>
-                game.status == "Beaten" || game.status == "Played Not Beaten" || game.status == "To Play");
         }
 
         public IActionResult Index()
@@ -44,5 +40,11 @@ namespace Testing.Controllers
             var toPlayGames = FetchLibraryGames().Where(game => game.status == "To Play");
             return View("Index", toPlayGames);
         }
+        private IEnumerable<Game> FetchLibraryGames()
+        {
+            return _repo.GetAllGames().Where(game =>
+                game.status == "Beaten" || game.status == "Played Not Beaten" || game.status == "To Play");
+        }
+
     }
 }
