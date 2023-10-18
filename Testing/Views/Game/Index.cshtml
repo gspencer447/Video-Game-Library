@@ -3,20 +3,22 @@
 <h2>Games</h2>
 
 <div style="display: block">
-    <a href="/Game/InsertGame/">Add a New Game</a>
+    <a class="add-button" href="/Game/InsertGame/">Add a New Game</a>
 </div>
 
 <div class="sort-options">
     <label for="sort">Sort by: </label>
-    <select id="sort" onchange="sortGames(this.value)">
-        <option value="default">Default</option>
-        <option value="beaten">Beaten</option>
-        <option value="played">Played, Not Beaten</option>
-        <option value="to play">To Play</option>
-    </select>
+    <div class="custom-dropdown-container">
+        <select id="sort" class="form-control custom-dropdown" onchange="sortGames(this.value)">
+            <option value="default">Default</option>
+            <option value="beaten">Beaten</option>
+            <option value="played">Played, Not Beaten</option>
+            <option value="to play">To Play</option>
+        </select>
+    </div>
 </div>
 
-<table class="table">
+<table class="table table-striped table-hover">
     <tr>
         <th>ID</th>
         <th>Name</th>
@@ -28,12 +30,12 @@
     @foreach (var game in @Model)
     {
         <tr>
-            <td><a href=/Game/ViewGame/@game.gameID>@game.gameID</a></td>
-            <td>@game.name</td>
+            <td><a class="game-id" href=/Game/ViewGame/@game.gameID>@game.gameID</a></td>
+            <td><a class="game-id" href=/Game/ViewGame/@game.gameID>@game.name</a></td>
             <td>@game.genre</td>
             <td>@game.release_date</td>
             <td>
-                <select onchange="updateGameStatus(this, '@game.gameID')">
+                <select class="custom-dropdown" onchange="updateGameStatus(this, '@game.gameID')">
                     <option value="Not Played">Not Played</option>
                     <option value="Played Not Beaten">Played, Not Beaten</option>
                     <option value="Beaten">Beaten</option>
