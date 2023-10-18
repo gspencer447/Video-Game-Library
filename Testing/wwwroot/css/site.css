@@ -163,5 +163,9 @@ tr {
 }
 
 .custom-bg-dark {
-    background-color: black;
+    background-color: transparent;
+}
+
+.nav-item{
+    align-items: flex-start;
 }
