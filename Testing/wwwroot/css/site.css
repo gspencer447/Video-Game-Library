@@ -97,8 +97,13 @@ body {
 }
 
 .custom-dropdown option {
-    background-color: rgba(200, 200, 200, 0.7);
     color: black;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    width: 200px;
+    padding: 6px;
+    font-weight: bold;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .custom-dropdown:focus,
@@ -175,7 +180,7 @@ tr {
 .display-4 {
     font-weight: bold;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-    padding-bottom: 20px;
+    padding-top: 25px;
     color: #02bdfd;
     outline: thin;
     outline-color: black;
@@ -194,6 +199,23 @@ p {
 
 .custom-dropdown-3 {
     color: white;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding: 6px;
+    font-weight: bold;
+}
+
+.custom-dropdown-3 option {
+    color: black;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding: 6px;
+    font-weight: bold;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.custom-dropdown-3:focus {
+    background-color: transparent;
 }
 
 .nav-link text-light {
@@ -213,5 +235,25 @@ th {
 }
 
 label {
+    color: white;
+}
+
+.form-control {
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary-2 {
+    color: white;
+    background-color: transparent;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    width: 150px;
+    font-weight: bold;
+}
+
+#status {
     color: white;
 }
