@@ -12,7 +12,7 @@ a {
 }
 
 .btn-primary {
-    color: black;
+    color: white;
     background-color: transparent;
     margin-top: 5px;
     border: 1px solid #ccc;
@@ -68,6 +68,7 @@ body {
     margin-bottom: 60px;
     color: white;
     font-weight: bold;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .footer {
@@ -93,7 +94,7 @@ body {
 }
 
 .custom-dropdown-2 {
-    color: black;
+    color: white;
     background-color: transparent;
     border: 1px solid #ccc;
     width: 200px;
@@ -147,6 +148,7 @@ tr {
 .update-id {
     color: white;
     padding-left: 6px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .delete-id {
@@ -155,6 +157,7 @@ tr {
     font-weight: bold;
     border: none;
     margin-top: 10px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .delete-form {
@@ -170,6 +173,25 @@ tr {
     align-items: flex-start;
 }
 
-.library-color {
+.nav-item-2 {
+    font-size: 17px;
+}
 
+.display-4 {
+    font-weight: bold;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    padding-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.control-label {
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.custom-dropdown-3 {
+    color: white;
 }
