@@ -5,7 +5,7 @@ a.navbar-brand {
 }
 
 a {
-  color: black;
+  color: white;
 }
 
 .btn-primary {
@@ -184,7 +184,8 @@ tr {
 p {
     font-size: 16px;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-    color: black;
+    color: white;
+    padding-top: 90px;
 }
 
 .control-label {
