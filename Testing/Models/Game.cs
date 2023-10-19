@@ -6,6 +6,6 @@
         public string name { get; set; }
         public string genre { get; set; }
         public int release_date { get; set; }
-        public string status { get; set; }
+        public string status { get; set; } = "Not Played";
     }
 }

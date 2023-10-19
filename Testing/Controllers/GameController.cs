@@ -28,7 +28,7 @@ namespace Testing.Controllers
                 case "played":
                     games = repo.GetAllGames().Where(game => game.status == "Played Not Beaten");
                     break;
-                case "toPlay":
+                case "to play":
                     games = repo.GetAllGames().Where(game => game.status == "To Play");
                     break;
                 default:

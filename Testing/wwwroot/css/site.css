@@ -1,14 +1,11 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
+﻿
 a.navbar-brand {
   white-space: normal;
   word-break: break-all;
 }
 
-/* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  color: black;
 }
 
 .btn-primary {
@@ -26,8 +23,6 @@ a {
     border-color: #1861ac;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
 html {
   font-size: 14px;
 }
@@ -53,8 +48,6 @@ button.accept-policy {
   line-height: inherit;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
 html {
   position: relative;
   min-height: 100%;
@@ -85,12 +78,13 @@ body {
 }
 
 .custom-dropdown {
-    color: white;
+    color: black;
     background-color: transparent;
     border: 1px solid #ccc;
     width: 200px;
     padding: 6px;
     font-weight: bold;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .custom-dropdown-2 {
@@ -117,20 +111,22 @@ body {
 }
 
 .add-button {
-    color: white;
+    color: black;
+    text-decoration: underline;
 }
 
 h2 {
     font-weight: bold;
-    color: white;
+    color: black;
 }
 
 .game-id {
-    color: white;
+    color: black;
 }
 
 .table {
     color: white;
+    background-color: rgba(192, 192, 192, 0.5);
 }
 
 .table-hover {
@@ -194,4 +190,24 @@ p {
 
 .custom-dropdown-3 {
     color: white;
+}
+
+.nav-link text-light {
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+#sort {
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+td {
+    color: black;
+}
+
+th {
+    color: black;
+}
+
+label {
+    color: black;
 }

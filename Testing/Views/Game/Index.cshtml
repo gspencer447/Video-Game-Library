@@ -57,7 +57,7 @@
             case 'played':
                 games = games.filter(game => game.status === 'Played Not Beaten');
                 break;
-            case 'toPlay':
+            case 'to play':
                 games = games.filter(game => game.status === 'To Play');
                 break;
             default:
@@ -76,7 +76,7 @@
             const row = tableBody.insertRow();
             row.innerHTML = `
                     <td><a href="/Game/ViewGame/${game.gameID}">${game.gameID}</a></td>
-                    <td>${game.name}</td>
+                    <td><a href="/Game/ViewGame/${game.gameID}">${game.name}</a></td>
                     <td>${game.genre}</td>
                     <td>${game.release_date}</td>
                     <td>${game.status}</td>`;
