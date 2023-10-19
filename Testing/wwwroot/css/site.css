@@ -78,7 +78,7 @@ body {
 }
 
 .custom-dropdown {
-    color: black;
+    color: white;
     background-color: transparent;
     border: 1px solid #ccc;
     width: 200px;
@@ -111,22 +111,21 @@ body {
 }
 
 .add-button {
-    color: black;
+    color: white;
     text-decoration: underline;
 }
 
 h2 {
     font-weight: bold;
-    color: black;
+    color: white;
 }
 
 .game-id {
-    color: black;
+    color: white;
 }
 
 .table {
     color: white;
-    background-color: rgba(192, 192, 192, 0.5);
 }
 
 .table-hover {
@@ -177,11 +176,15 @@ tr {
     font-weight: bold;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     padding-bottom: 20px;
+    color: #02bdfd;
+    outline: thin;
+    outline-color: black;
 }
 
 p {
     font-size: 16px;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    color: black;
 }
 
 .control-label {
@@ -197,17 +200,17 @@ p {
 }
 
 #sort {
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    color: white;
 }
 
 td {
-    color: black;
+    color: white;
 }
 
 th {
-    color: black;
+    color: white;
 }
 
 label {
-    color: black;
+    color: white;
 }
