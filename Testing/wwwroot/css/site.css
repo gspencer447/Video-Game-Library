@@ -69,7 +69,7 @@ body {
   bottom: 0;
   width: 100%;
   white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+  line-height: 60px;
 }
 
 .custom-dropdown-container {
@@ -158,6 +158,11 @@ tr {
     border: none;
     margin-top: 10px;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.delete-id:hover {
+    text-decoration: underline;
+    color: blue;
 }
 
 .delete-form {
