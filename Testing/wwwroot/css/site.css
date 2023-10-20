@@ -11,10 +11,14 @@ a {
 .btn-primary {
     color: white;
     background-color: transparent;
-    margin-top: 5px;
+    margin-top: 10px;
     border: 1px solid #ccc;
     width: 150px;
     font-weight: bold;
+}
+
+.btn-primary {
+    outline-color: none;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -223,10 +227,6 @@ p {
     background-color: transparent;
 }
 
-.nav-link text-light {
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-}
-
 #sort {
     color: white;
 }
@@ -252,13 +252,30 @@ label {
 
 .btn-primary-2 {
     color: white;
-    background-color: transparent;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    width: 150px;
+    padding-top: 10px;
+    padding-left: 6px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     font-weight: bold;
+}
+
+.btn-primary-2:hover {
+    text-decoration: underline;
+    color: blue;
 }
 
 #status {
     color: white;
+}
+
+.btn-primary-4 {
+    color: white;
+    padding-top: 10px;
+    padding-left: 6px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+.btn-primary-4:hover {
+    text-decoration: underline;
+    color: blue;
 }
